@@ -7,6 +7,6 @@
     <title>SoccerLeague</title>
 </head>
 <body>
-    <h1>Formulario actualizar club <?php $club?></h1>
+    <h1>Formulario actualizar equipo <?php $club?></h1>
 </body>
 </html>

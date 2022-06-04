@@ -28,16 +28,21 @@ Route::controller(ClubController::class)->group(function(){
 });
 
 //EQUIPOS
-Route::get('equipos', [EquipoController::class, 'index']);
-Route::get('equipos/create', [EquipoController::class, 'create']);
-Route::get('equipos/update', [EquipoController::class, 'update']);
-Route::get('equipos/{equipo}', [EquipoController::class, 'show']);
+Route::controller(EquipoController::class)->group(function(){
+    Route::get('equipos', 'index');
+    Route::get('equipos/create', 'create');
+    Route::get('equipos/update', 'update');
+    Route::get('equipos/{equipo}', 'show');
+});
+
 
 //PARTIDOS
-Route::get('partidos', [PartidoController::class, 'index']);
-Route::get('partidos/create', [PartidoController::class, 'create']);
-Route::get('partidos/update', [PartidoController::class, 'update']);
-Route::get('partidos/{partido}', [PartidoController::class, 'show']);
+Route::controller(PartidoController::class)->group(function(){
+    Route::get('partidos', 'index');
+    Route::get('partidos/create', 'create');
+    Route::get('partidos/update', 'update');
+    Route::get('partidos/{partido}', 'show');
+});
 
 /* Route::get('cursos/{curso}/{categoria?}', function ($curso, $categoria = null) {
     if ($categoria) {

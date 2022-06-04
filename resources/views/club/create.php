@@ -7,6 +7,6 @@
     <title>SoccerLeague</title>
 </head>
 <body>
-    <h1>Formulario Club</h1>
+    <h1>Formulario crear Club</h1>
 </body>
 </html>

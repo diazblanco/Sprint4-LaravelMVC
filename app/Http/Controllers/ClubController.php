@@ -12,12 +12,12 @@ class ClubController extends Controller
     }
 
     public function create(){
-        return view('club/create');
+        return view('club.create');
         //return "Formulario nuevo club";
     }
     
     public function show($club){ //¿? Necesito controlador para mostrar los clubs en la home? o los muestro por queries?
-        return view('club/index');
+        return view('club.show', ['club' => $club]);
         //return "Bienvenido al club $club";
     }
 

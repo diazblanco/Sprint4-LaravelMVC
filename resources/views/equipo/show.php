@@ -7,6 +7,6 @@
     <title>SoccerLeague</title>
 </head>
 <body>
-    <h1>Mostrar Equipos</h1>
+    <h1>Mostrar equipo: <?php echo $equipo?></h1>
 </body>
 </html>
