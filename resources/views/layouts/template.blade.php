@@ -8,12 +8,13 @@
     <!-- favicon-->
     <!-- styles-->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href={{asset('style.css')}}>
 </head>
-<body class="bg-repeat" style="background-image: url('img/goal-net.png');">
+
+<body class="bg-repeat" style="background-image: url({{asset('img/goal-net.png')}});">
     <!-- cabecera-->
     <header class="shadow-md">
-        <div class="top-0 w-full h-full bg-center bg-cover object-cover" style="background-image: url('img/header-img.jpeg');">
+        <div class="top-0 w-full h-full bg-center bg-cover object-cover" style="background-image: url({{asset('img/header-img.jpeg')}});">
             <div class="flex-col items-center justify-center w-full h-full">
                 <button type="button" class="text-left type ml-5 mt-1 text-xl text-red-700/75">#home</button>
                 <div class="text-center flex-row">
