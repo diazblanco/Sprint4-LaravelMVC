@@ -17,7 +17,7 @@ class ClubController extends Controller
     }
     
     public function show($club){ //¿? Necesito controlador para mostrar los clubs en la home? o los muestro por queries?
-        return view('club.show', ['club' => $club]);
+        return view('club.show', compact("club"));
         //return "Bienvenido al club $club";
     }
 

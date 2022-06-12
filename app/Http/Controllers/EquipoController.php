@@ -17,7 +17,7 @@ class EquipoController extends Controller
     }
     
     public function show($equipo){
-        return view('equipo.show', ['equipo' => $equipo]);
+        return view('equipo.show', compact('equipo'));
         //return "Bienvenido al equipo $equipo";
     }
 
