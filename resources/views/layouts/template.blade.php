@@ -16,7 +16,7 @@
     <header class="shadow-md">
         <div class="top-0 w-full h-full bg-center bg-cover object-cover" style="background-image: url({{asset('img/header-img.jpeg')}});">
             <div class="flex-col items-center justify-center w-full h-full">
-                <button type="button" class="text-left type ml-5 mt-1 text-xl text-red-700/75">#home</button>
+                <a href="{{route('home')}}" class="text-left type ml-5 mt-1 text-xl text-red-700/75">#home</a>
                 <div class="text-center flex-row">
                     <h1 class="mt-2 type text-gray-900/75 text-8xl tracking-tight mix-blend-multiply">&nbsp;SOCCER<span class="text-2xl spantype text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-red-400 lg:text-9xl italic tracking-normal">league &nbsp; &nbsp;</span></h1>
                 </div>

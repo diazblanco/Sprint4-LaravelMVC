@@ -17,14 +17,14 @@ use App\Http\Controllers\PartidoController;
 |
 */
 //INDEX
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 //CLUBS
 Route::controller(ClubController::class)->group(function(){
-    Route::get('clubs', 'index');
-    Route::get('clubs/create', 'create');
-    Route::get('clubs/update', 'update');
-    Route::get('clubs/{club}', 'show');
+    Route::get('clubs', 'index')->name('clubs.index');
+    Route::get('clubs/create', 'create')->name('clubs.create');
+    Route::get('clubs/update', 'update')->name('clubs.update');
+    Route::get('clubs/{club}', 'show')->name('clubs.show');
 });
 
 //EQUIPOS
