@@ -12,8 +12,8 @@
         @foreach ($clubs as $club)
             <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/4 lg:px-6 wow fadeInUp pt-5" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
                 <div class=" bg-white py-8 px-12 mb-12 border border-rose-600/10 rounded-lg shadow-md shadow-red-400/50 drop-shadow transform transition duration-300 ease-in-out hover:-translate-y-2 h-60">
-                    <h3 class="text-lg leading-normal mb-2 font-semibold text-black">{{$club->name}}</h3>
-                    <div class="display-flex flex-row justify-around mb-4"></div>    
+                    <a href="{{route('clubs.show', $club->name)}}"><h3 class="text-lg leading-normal mb-2 font-semibold text-black">{{$club->name}}</h3></a>
+                    {{-- <div class="display-flex flex-row justify-around mb-4"></div> --}}    
                 </div>
             </div>
         @endforeach   
