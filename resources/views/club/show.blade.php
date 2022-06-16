@@ -1,16 +1,16 @@
 @extends('layouts.template')
 @section('title', 'Club ' . $club->name)
 
-@section('content')
+{{-- @section('content')
     <div class="container xl:max-w-6xl mx-auto my-0 px-4 bg-white/95 shadow">
         <div class="flex flex-row justify-between justify-end">
             <div class="type text-red-600 self-end">Bienvenido al Club: {{$club->name}}</div>
             <!--vídeo 16, minuto 21 -->
         </div>
     </div> 
-@endsection
+@endsection --}}
 
-{{-- @section('content')
+@section('content')
     <div class="container xl:max-w-6xl mx-auto my-0 px-4 bg-white/95 shadow">
         <div class="flex flex-row justify-between justify-end mx-4">
             <div class="type text-red-600 self-end pt-10 text-3xl font-thin">els <span class="font-black">equips de {{$club->name}}</span></div>
@@ -28,6 +28,6 @@
         @endforeach   
         </div>
     </div>
-@endsection --}}
+@endsection
 
 
