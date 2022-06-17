@@ -18,6 +18,7 @@ class ClubController extends Controller
 
     public function store(Request $request){
         $club = new Club();
+        
         $club->name = $request->name;
         $club->location = $request->location;
         $club->color = $request->color;
@@ -44,7 +45,8 @@ class ClubController extends Controller
         return redirect()->route('home');
     }
     
-    public function delete($club){
-        return "Formulario actualizar club $club";
+    public function destroy(Club $club){
+        $club->delete();
+        return redirect()->route('home');
     }
 }

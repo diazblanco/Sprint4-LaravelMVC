@@ -27,6 +27,7 @@ Route::controller(ClubController::class)->group(function(){
     Route::get('clubs/{id}', 'show')->name('clubs.show');
     Route::get('clubs/{club}/edit', 'edit')->name('clubs.edit');
     Route::put('clubs/{club}', 'update')->name('clubs.update');
+    Route::delete('clubs/{club}', 'destroy')->name('clubs.destroy');
 });
 
 //EQUIPOS
