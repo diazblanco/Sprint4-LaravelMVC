@@ -24,8 +24,9 @@ Route::controller(ClubController::class)->group(function(){
     Route::get('clubs', 'index')->name('clubs.index'); //No la utilizo. La vista dnd se muestran los clubs es la home
     Route::get('clubs/create', 'create')->name('clubs.create');
     Route::post('clubs', 'store')->name('clubs.store');
-    Route::get('clubs/update', 'update')->name('clubs.update');
     Route::get('clubs/{id}', 'show')->name('clubs.show');
+    Route::get('clubs/{club}/edit', 'edit')->name('clubs.edit');
+    Route::put('clubs/{club}', 'update')->name('clubs.update');
 });
 
 //EQUIPOS

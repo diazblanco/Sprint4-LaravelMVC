@@ -32,8 +32,16 @@ class ClubController extends Controller
         return view('club.show', compact("club"), compact('teams'));    
     }
 
-    public function update(){
-        return view('club/update');
+    public function edit(Club $club){
+        return view('club.edit', compact("club"));
+    }
+
+    public function update(Request $request, Club $club){
+        $club->name = $request->name;
+        $club->location = $request->location;
+        $club->color = $request->color;
+        $club->save();
+        return redirect()->route('home');
     }
     
     public function delete($club){
