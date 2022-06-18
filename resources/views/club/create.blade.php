@@ -33,11 +33,11 @@
                 <select
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-rose-800 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   name="color" required>
-                  <option value="red">Vermell</option>
-                  <option value="blue">Blau</option>
-                  <option value="green">verd</option>
-                  <option value="yellow">groc</option>
-                  <option value="orange">Taronja</option>
+                  <option value="Vermell">Vermell</option>
+                  <option value="Blau">Blau</option>
+                  <option value="Verd">Verd</option>
+                  <option value="Groc">Groc</option>
+                  <option value="Taronja">Taronja</option>
                 </select>
               </div>
               <div class="flex items-center justify-start mt-4 gap-x-2">

@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ClubController;
-use App\Http\Controllers\EquipoController;
-use App\Http\Controllers\PartidoController;
+use App\Http\Controllers\LeagueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,41 +17,51 @@ use App\Http\Controllers\PartidoController;
 //INDEX
 Route::get('/', HomeController::class)->name('home');
 
-//CLUBS
-Route::controller(ClubController::class)->group(function(){
-    Route::get('clubs', 'index')->name('clubs.index'); //No la utilizo. La vista dnd se muestran los clubs es la home
+Route::controller(LeagueController::class)->group(function(){
+
+    //CLUBS
     Route::get('clubs/create', 'create')->name('clubs.create');
+    Route::get('clubs/createTeam', 'createTeam')->name('clubs.createTeam');
+
+
     Route::post('clubs', 'store')->name('clubs.store');
     Route::get('clubs/{id}', 'show')->name('clubs.show');
     Route::get('clubs/{club}/edit', 'edit')->name('clubs.edit');
     Route::put('clubs/{club}', 'update')->name('clubs.update');
     Route::delete('clubs/{club}', 'destroy')->name('clubs.destroy');
+
+    //EQUIPOS
+    
+
 });
 
 //EQUIPOS
-Route::controller(EquipoController::class)->group(function(){
+/* Route::controller(EquipoController::class)->group(function(){
+    Route::get('equipos/create', 'create')->name('equipos.create');
+    Route::post('equipos', 'store')->name('equipos.store');
+    Route::get('equipos/{id}', 'show')->name('equipos.show');
+    Route::get('equipos/{team}/edit', 'edit')->name('equipos.edit');
+    Route::put('equipos/{team}', 'update')->name('equipos.update');
+    Route::delete('equipos/{team}', 'destroy')->name('equipos.destroy');
+    
+    
+    
+    
     Route::get('equipos', 'index');
     Route::get('equipos/create', 'create');
     Route::get('equipos/update', 'update');
     Route::get('equipos/{equipo}', 'show');
-});
+}); */
 
 
 //PARTIDOS
-Route::controller(PartidoController::class)->group(function(){
+/* Route::controller(PartidoController::class)->group(function(){
     Route::get('partidos', 'index');
     Route::get('partidos/create', 'create');
     Route::get('partidos/update', 'update');
     Route::get('partidos/{partido}', 'show');
-});
-
-/* Route::get('cursos/{curso}/{categoria?}', function ($curso, $categoria = null) {
-    if ($categoria) {
-        return "Bienvenido al curso $curso, de la categoria $categoria";
-    } else {
-        return "Bienvenido al curso $curso";
-    }
 }); */
+
 
 
 

@@ -6,11 +6,9 @@ use App\Models\Club;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
-class ClubController extends Controller
+class LeagueController extends Controller
 {
-    /* public function index(){ 
-        return view('club/index');
-    } */
+    //////////////// CLUB ////////////////
 
     public function create(){
         return view('club.create');

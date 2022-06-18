@@ -8,6 +8,7 @@
     <!-- favicon-->
     <!-- styles-->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href={{asset('style.css')}}>
 </head>
 
@@ -27,6 +28,16 @@
         </div>
     </header>
     <!-- cabecera-->
+    <button
+        x-cloak x-data="{scroll : false}" x-on:scroll.window="document.documentElement.scrollTop > 200 ? scroll = true : scroll = false"
+        x-show="scroll"
+        x-on:click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        x-transition.opacity.duration.300ms
+        class="fixed inline-block w-12 h-12 p-1 text-xs font-medium leading-tight transition duration-150 ease-in-out hover:opacity-70 bottom-4 right-4"
+        id="btn-back-to-top"      
+        type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 fill-white stroke-rose-600 stroke-[1.5px]" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" style="fill-opacity:0.6;"></circle><polyline points="16 12 12 8 8 12"></polyline><line x1="12" y1="16" x2="12" y2="8"></line></svg>
+      </button>
 
     @yield('content')
     
