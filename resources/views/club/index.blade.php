@@ -1,4 +1,4 @@
-@extends('layouts.template')
+{{-- @extends('layouts.template')
 @section('title', 'Cada club')
 
 @section('content')
@@ -7,4 +7,4 @@
             <div class="type text-red-600 self-end">Página inicio de cada club holaaa</div>
         </div>
     </div> 
-@endsection
+@endsection --}}
