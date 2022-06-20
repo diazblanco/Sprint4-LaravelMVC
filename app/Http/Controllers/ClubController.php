@@ -6,9 +6,8 @@ use App\Models\Club;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
-class LeagueController extends Controller
+class ClubController extends Controller
 {
-    //////////////// CLUB ////////////////
     public function create(){
         return view('club.create');
     }
@@ -41,32 +40,7 @@ class LeagueController extends Controller
         return redirect()->route('home');
     }
 
-    //////////////// EQUIPO ////////////////
-    public function createTeam(Club $club){
-        return view('equipo.create', compact("club"));
-    }
-    public function storeTeam(Request $request){
-        $team = new Team();
-        $team->name = $request->name;
-        $team->category = $request->category;
-        $team->club_id = $request->club_id;
-        $team->save();
-        return redirect()->route('home'); // poner vista en vez de route
-    }
-    public function editTeam(Team $team){
-        return view('equipo.edit', compact("team"));
-    }
-    public function updateTeam(Request $request, Team $team){
-        $team->name = $request->name;
-        $team->category = $request->category;
-        $team->club_id = $request->club_id;
-        $team->save();
-        return redirect()->route('home'); //redirect a club.show
-    }
-    public function destroyTeam(Team $team){
-        $team->delete();
-        return redirect()->route('home'); //redirect a club.show
-    }
+    
     /////////////////////////////////////
     /////////////////////////////////////
 }

@@ -5,7 +5,7 @@
         <div class="flex flex-row justify-between justify-end mx-4">
             <div class="type text-red-600 self-end pt-10 text-3xl font-thin">els <span class="font-black">clubs de la lliga</span></div>
             <a href="{{route('clubs.create')}}" class="self-end px-4 py-2 rounded-md bg-rose-50 text-rose-600 border border-rose-600/10 hover:bg-gradient-to-r from-red-700 to-red-400 hover:text-white mb-12 shadow-md shadow-red-400/50 drop-shadow type appearance-none mb-0">
-                Afegir club
+                Afegir club 
             </a>
         </div>       
         <div class="flex flex-wrap flex-row -mx-4 text-center">
@@ -110,7 +110,7 @@
                 </div>
             </div>
             
-            
+            {{----}}
            
         </div>
     </div>

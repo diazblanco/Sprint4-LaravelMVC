@@ -8,7 +8,7 @@
         </div>
         <div class="w-full px-16 pt-0 pb-10 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
           <div class="w-full px-6 py-4 bg-white rounded shadow-md ring-1 ring-gray-900/10">
-            <form method="POST" action="{{route('equips.updateTeam', $team)}}">
+            <form method="POST" action="{{route('equips.update', $team)}}">
               @csrf
               @method('put')
               <div>
