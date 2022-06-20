@@ -34,7 +34,7 @@
                 <select
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-rose-800 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   name="color" value="{{$club->color}}" required>
-                  <option value="current">{{$club->color}}</option>
+                  <option value="{{$club->color}}">{{$club->color}}</option>
                   <option value="Blau">Blau</option>
                   <option value="Verd">verd</option>
                   <option value="Groc">groc</option>

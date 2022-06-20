@@ -1,15 +1,6 @@
 @extends('layouts.template')
 @section('title', 'Club ' . $club->name)
 
-{{-- @section('content')
-    <div class="container xl:max-w-6xl mx-auto my-0 px-4 bg-white/95 shadow">
-        <div class="flex flex-row justify-between justify-end">
-            <div class="type text-red-600 self-end">Bienvenido al Club: {{$club->name}}</div>
-            <!--vídeo 16, minuto 21 -->
-        </div>
-    </div> 
-@endsection --}}
-
 @section('content')
     <div class="container xl:max-w-5xl mx-auto my-0 px-4 pb-10 bg-white/95 shadow shadow-md shadow-red-400/50 drop-shadow">
         <div class="flex flex-row justify-between justify-end mx-4">

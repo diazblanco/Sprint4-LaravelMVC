@@ -51,7 +51,7 @@ class LeagueController extends Controller
         $team->category = $request->category;
         $team->club_id = $request->club_id;
         $team->save();
-        return redirect()->route('home'); //redirect a club.show
+        return redirect()->route('home'); // poner vista en vez de route
     }
     public function editTeam(Team $team){
         return view('equipo.edit', compact("team"));
