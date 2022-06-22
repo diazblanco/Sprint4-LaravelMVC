@@ -16,7 +16,7 @@
                 </label>
                 <input
                   class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="text" name="name" placeholder="Indica el nom del club" required/>
+                  type="text" name="name" placeholder="Indica el nom del club"/>
               </div>
               <div>
                 <label class="block text-sm pt-5 font-bold text-rose-800" for="title">
@@ -24,7 +24,7 @@
                 </label>
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="text" name="location" placeholder="A quina localitat pertany" required/>
+                  type="text" name="location" placeholder="A quina localitat pertany"/>
               </div>
               <div>
                 <label class="block text-sm pt-5 font-bold text-rose-800" for="title">
@@ -32,7 +32,7 @@
                 </label>
                 <select
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-rose-800 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  name="color" required>
+                  name="color">
                   <option value="Vermell">Vermell</option>
                   <option value="Blau">Blau</option>
                   <option value="Verd">Verd</option>

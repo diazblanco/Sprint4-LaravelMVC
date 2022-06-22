@@ -14,17 +14,17 @@
                 <div class="flex justify-between">
                     <div class="w-1/2 pr-2">
                         <label class="block text-sm font-bold text-rose-800" for="title">Data del parti</label>
-                        <input type="date" name="match_date" class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-red-400" placeholder="Indica el dia i hora que tindrà lloc el partit" required/>
+                        <input type="date" name="match_date" class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-red-400" placeholder="Indica el dia i hora que tindrà lloc el partit"/>
                     </div>
                     <div class="w-1/2 pl-2">
                         <label class="block text-sm font-bold text-rose-800" for="title">Hora del parti</label>
-                        <input type="time" name="match_time" class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-red-400" placeholder="Indica el dia i hora que tindrà lloc el partit" required/>
+                        <input type="time" name="match_time" class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-red-400" placeholder="Indica el dia i hora que tindrà lloc el partit"/>
                     </div>
                 </div>
             {{-- categoría --}}
                 <div>
                     <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Categoria</label>
-                    <select name="category" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-red-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                    <select name="category" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-red-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                         <option value="Benjamín">Benjamín</option>
                         <option value="Alevín">Alevín</option>
                         <option value="Infantil">Infantil</option>
@@ -36,7 +36,7 @@
                 {{-- Equipo local --}}
                     <div class="w-1/2 pr-2">
                         <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Equip local</label>
-                        <select name="team_id_local" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-red-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                        <select name="team_id_local" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-red-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                             @foreach ($teams as $team)
                             <option value="{{$team->id}}">{{$team->name}}</option>
                             @endforeach
@@ -45,7 +45,7 @@
                 {{-- Equipo visitante --}}
                     <div class="w-1/2 pl-2">
                         <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Equip visitant</label>
-                        <select name="team_id_visiting" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-red-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
+                        <select name="team_id_visiting" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-red-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                             @foreach ($teams as $team)
                             <option value="{{$team->id}}">{{$team->name}}</option>
                             @endforeach
@@ -66,19 +66,6 @@
                         class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Gols marcats per l'equip visitant"/>   
                     </div>
                 </div>
-            {{-- Puntos local --}}
-                {{-- <div class="flex justify-between">
-                    <div class="w-1/2 pr-2">
-                        <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Punts equip local</label>
-                        <input name="local_points" input type="number" min="0" max="3"
-                        class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Punts obtinguts per l'equip visitant"/>   
-                    </div> --}}
-            {{-- Puntos visitante --}}
-                    {{-- <div class="w-1/2 pl-2">
-                        <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Punts equip visitant</label>
-                        <input name="visiting_point" input type="number" min="0" max="3" class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Punts obtinguts per l'equip visitant" />   
-                    </div>
-                </div> --}}
             {{-- Enviar --}}
                 <div class="flex items-center justify-start mt-4 gap-x-2">
                     <button type="submit" class="self-end px-4 py-2 mt-5 rounded-md bg-rose-50 text-rose-600 border border-rose-600/10 hover:bg-gradient-to-r from-red-700 to-red-400 hover:text-white shadow-md shadow-red-400/50 drop-shadow type appearance-none mb-0 font-black">

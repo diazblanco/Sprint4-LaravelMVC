@@ -21,7 +21,6 @@ class ClubController extends Controller
     }  
     public function show($id){
         $club = Club::find($id);
-        //$teams = Team::all();
         $teams = Team::where('club_id', $club->id)->get();
         return view('club.show', compact("club"), compact('teams'));    
     }
