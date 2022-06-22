@@ -20,7 +20,8 @@ class MatcheFactory extends Factory
     public function definition()
     {
         return [
-            'match_date' => $this->faker->dateTime()->format('Y-m-d H:i:s'),
+            'match_date' => $this->faker->date(),
+            'match_time' => $this->faker->time(),
             'team_id_local'=> $this -> faker ->randomElement([1,2,3]), //Team::inRandomOrder()->first()->id,
             'team_id_visiting'=> $this -> faker ->randomElement([1,2,3]), //Team::inRandomOrder()->first()->id,
             'category' => $this -> faker -> randomElement(['Benjamín', 'Alevín', 'Infantil', 'Cadete', 'Juvenil']),

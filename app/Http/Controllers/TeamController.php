@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class TeamController extends Controller
 {
-        public function create(Club $club){
+    public function create(Club $club){
         return view('equipo.create', compact("club"));
     }
     public function store(Request $request){
