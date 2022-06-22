@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 60);
             $table->enum('category', ['Benjamín', 'Alevín', 'Infantil', 'Cadete', 'Juvenil']);
-            $table->unsignedBigInteger('club_id')->unique();
+            $table->unsignedBigInteger('club_id');
             $table->foreign('club_id')->references('id')->on('clubs')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Club;
+use App\Models\Matche;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function __invoke(){
-            //return view('welcome');
-            return view('home');
-    //return "Bienvenido a la página principal de la app";
+        $clubs = Club::all();
+        $matches = Matche::all();
+        return view('home', compact('clubs'), compact('matches'));
     }
 }

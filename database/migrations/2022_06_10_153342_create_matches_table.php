@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('matches', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('match_date', $precision = 0);
+            $table->date('match_date');
+            $table->time('match_time');
             //clave foranea local
-            $table->unsignedBigInteger('team_id_local')->unique();
+            $table->unsignedBigInteger('team_id_local');
             $table->foreign('team_id_local')->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');
             //clave foranea visitante
-            $table->unsignedBigInteger('team_id_visiting')->unique();
+            $table->unsignedBigInteger('team_id_visiting');
             $table->foreign('team_id_visiting')->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');
 
             $table->enum('category', ['Benjamín', 'Alevín', 'Infantil', 'Cadete', 'Juvenil']);

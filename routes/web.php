@@ -3,55 +3,42 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClubController;
-use App\Http\Controllers\EquipoController;
-use App\Http\Controllers\PartidoController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\MatchControllers;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 //INDEX
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 //CLUBS
-Route::controller(ClubController::class)->group(function(){
-    Route::get('clubs', 'index');
-    Route::get('clubs/create', 'create');
-    Route::get('clubs/update', 'update');
-    Route::get('clubs/{club}', 'show');
+Route::controller(ClubController::class)->group(function(){ 
+    Route::get('clubs/create', 'create')->name('clubs.create');
+    Route::post('clubs', 'store')->name('clubs.store');
+    Route::get('clubs/{id}', 'show')->name('clubs.show'); 
+    Route::get('clubs/{club}/edit', 'edit')->name('clubs.edit');
+    Route::put('clubs/{club}', 'update')->name('clubs.update');
+    Route::delete('clubs/{club}', 'destroy')->name('clubs.destroy');
 });
 
 //EQUIPOS
-Route::controller(EquipoController::class)->group(function(){
-    Route::get('equipos', 'index');
-    Route::get('equipos/create', 'create');
-    Route::get('equipos/update', 'update');
-    Route::get('equipos/{equipo}', 'show');
+Route::controller(TeamController::class)->group(function(){
+    Route::get('equips/{club}/create', 'create')->name('equips.create');
+    Route::post('equips', 'store')->name('equips.store');
+    Route::get('equips/{team}/edit', 'edit')->name('equips.edit');
+    Route::put('equips/{team}', 'update')->name('equips.update');
+    Route::delete('equips/{team}', 'destroy')->name('equips.destroy');
 });
 
 
 //PARTIDOS
-Route::controller(PartidoController::class)->group(function(){
-    Route::get('partidos', 'index');
-    Route::get('partidos/create', 'create');
-    Route::get('partidos/update', 'update');
-    Route::get('partidos/{partido}', 'show');
+Route::controller(MatchControllers::class)->group(function(){
+    Route::get('partits/create', 'create')->name('partits.create');
+    Route::post('partits', 'store')->name('partits.store');
+    Route::get('partits/{match}/edit', 'edit')->name('partits.edit');
+    Route::put('partits/{match}', 'update')->name('partits.update');
+    Route::delete('partits/{match}', 'destroy')->name('partits.destroy');
 });
 
-/* Route::get('cursos/{curso}/{categoria?}', function ($curso, $categoria = null) {
-    if ($categoria) {
-        return "Bienvenido al curso $curso, de la categoria $categoria";
-    } else {
-        return "Bienvenido al curso $curso";
-    }
-}); */
-
-
+/////////////////////////////////////
+/////////////////////////////////////
 
 ?>
