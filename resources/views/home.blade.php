@@ -69,7 +69,8 @@
                                 <table class="min-w-full text-sm text-gray-400">
                                     <thead class="bg-gradient-to-t from-red-700 to-red-400 type text-white font-medium">
                                         <tr>
-                                            <th scope="col" class="px-6 py-3 text-center tracking-wider">Data partit</th>
+                                            <th scope="col" class="px-6 py-3 text-center tracking-wider">Categoria</th>
+                                            <th colspan="3" class="px-6 py-3 text-center tracking-wider">Data i Hora partit</th>
                                             <th scope="col" class="px-6 py-3 text-center tracking-wider">Estat</th>
                                             <th scope="col" class="px-6 py-3 text-center tracking-wider">Local</th>
                                             <th scope="col" class="px-6 py-3 text-center tracking-wider">Visitant</th>
@@ -81,8 +82,11 @@
                                     @foreach ($matches as $match)
                                     <tbody class="bg-white py-8 px-12 mb-12 border border-rose-600/10 rounded-lg shadow-md shadow-red-400/50 drop-shadow">
                                         <tr>
-                                            <td class="px-6 py-4">{{$match->match_date}}</td>
-                                            <td class="px-6 py-4">Pendent</td>
+                                            <td class="pl-6 pr-0 py-4">{{$match->category}}</td>
+                                            <td class="pl-6 pr-0 py-4">{{$match->match_date}}</td>
+                                            <td class="px-0 py-4 text-center">|</td>
+                                            <td class="pl-0 pr-6 py-4">{{$match->match_time}}</td>
+                                            <td class="px-6 py-4"><?php if ($match->local_goals == null){echo "Pendent";} else {echo "Jugat";}?></td>
                                             <td class="px-6 py-4">{{$match->team_id_local}}</td>
                                             <td class="px-6 py-4">{{$match->team_id_visiting}}</td>
                                             <td class="pl-9 pr-0 py-4 text-right ">{{$match->local_goals}}</td>
@@ -116,7 +120,7 @@
                         </div>
                     </div>                
                 </div>
-                
+                {{-- END Benjamín --}}
                 
                                 </table>
                             </div>
@@ -133,4 +137,3 @@
 {{-- ', 'Alevín', 'Infantil', 'Cadete', 'Juvenil
  --}}
 {{-- foreach categoria, renderizar la tabla correspondiente con el {{categoria->name}} --}}
-{{-- foreach partido where categoria = x, * partido order by datetime asc --}}

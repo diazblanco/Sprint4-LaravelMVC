@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Club;
 use App\Models\Matche;
+use App\Models\Team;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class HomeController extends Controller
 {
