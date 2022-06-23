@@ -12,6 +12,11 @@ class ClubController extends Controller
         return view('club.create');
     }
     public function store(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'location'=>'required',
+            'color'=>'required',
+        ]);
         $club = new Club();
         $club->name = $request->name;
         $club->location = $request->location;
@@ -28,6 +33,11 @@ class ClubController extends Controller
         return view('club.edit', compact("club"));
     }
     public function update(Request $request, Club $club){
+        $request->validate([
+            'name'=>'required',
+            'location'=>'required',
+            'color'=>'required',
+        ]);
         $club->name = $request->name;
         $club->location = $request->location;
         $club->color = $request->color;

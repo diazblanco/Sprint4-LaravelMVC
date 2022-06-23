@@ -14,6 +14,13 @@ class MatchControllers extends Controller
         return view('partido.create', compact("teams"));
     }
     public function store(Request $request){
+        $request->validate([
+            'match_date'=>'required|date|after:yesterday',
+            'match_time'=>'required',
+            'category'=>'required',
+            'team_id_local'=>'required',
+            'team_id_visiting'=>'required|different:team_id_local',
+        ]);
         $match = new Matche();
         $match->match_date = $request->match_date;
         $match->match_time = $request->match_time;
@@ -31,6 +38,13 @@ class MatchControllers extends Controller
         return view('partido.edit', compact("match"), compact("teams"), compact("matches"));
     }
     public function update(Request $request, Matche $match){
+        $request->validate([
+            'match_date'=>'required',
+            'match_time'=>'required',
+            'category'=>'required',
+            'team_id_local'=>'required',
+            'team_id_visiting'=>'required',
+        ]);
         $match->match_date = $request->match_date;
         $match->match_time = $request->match_time;
         $match->category = $request->category;

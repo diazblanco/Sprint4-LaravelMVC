@@ -17,7 +17,8 @@
                 </label>
                 <input
                   class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="text" name="name" value="{{$club->name}}" placeholder="Indica el nom del club"/>
+                  type="text" name="name" value="{{old('name', $club->name)}}" placeholder="Indica el nom del club"/>
+                  @error('name')<br><small>*{{$message}}</small><br>@enderror
               </div>
               <div>
                 <label class="block text-sm pt-5 font-bold text-rose-800" for="title">
@@ -25,7 +26,8 @@
                 </label>
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="text" name="location" value="{{$club->location}}" placeholder="A quina localitat pertany"/>
+                  type="text" name="location" value="{{old('location', $club->location)}}" placeholder="A quina localitat pertany"/>
+                  @error('location')<br><small>*{{$message}}</small><br>@enderror
               </div>
               <div>
                 <label class="block text-sm pt-5 font-bold text-rose-800" for="title">
@@ -33,15 +35,15 @@
                 </label>
                 <select
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-rose-800 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  name="color" value="{{$club->color}}">
+                  name="color" value="{{old('color', $club->color)}}">
                   <option value="{{$club->color}}">{{$club->color}}</option>
                   <option value="Blau">Blau</option>
                   <option value="Verd">verd</option>
                   <option value="Groc">groc</option>
                   <option value="Taronja">Taronja</option>
                   <option value="Vermell">Vermell</option>
-
                 </select>
+                @error('color')<br><small>*{{$message}}</small><br>@enderror
               </div>
               <div class="flex items-center justify-start mt-4 gap-x-2">
                 <button type="submit"
