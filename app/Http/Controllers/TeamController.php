@@ -12,6 +12,10 @@ class TeamController extends Controller
         return view('equipo.create', compact("club"));
     }
     public function store(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'category'=>'required',
+        ]);
         $team = new Team();
         $team->name = $request->name;
         $team->category = $request->category;
@@ -24,6 +28,10 @@ class TeamController extends Controller
         return view('equipo.edit', compact("team"));
     }
     public function update(Request $request, Team $team){
+        $request->validate([
+            'name'=>'required',
+            'category'=>'required',
+        ]);
         $team->name = $request->name;
         $team->category = $request->category;
         $team->club_id = $request->club_id;

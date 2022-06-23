@@ -16,7 +16,8 @@
                   Nom de l'equip
                 </label>
                 <input class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  type="text" name="name" value="{{$team->name}}" placeholder="Indica el nom de l'equip"/>
+                  type="text" name="name" value="{{old('name', $team->name)}}" placeholder="Indica el nom de l'equip"/>
+                  @error('name')<br><small>*{{$message}}</small><br>@enderror
               </div>
               <div>
                 <label class="block text-sm pt-5 font-bold text-rose-800" for="title">
@@ -24,7 +25,7 @@
                 </label>
                 <select
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-rose-800 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                  name="category" value="{{$team->category}}">
+                  name="category" value="{{old('category', $team->category)}}">
                   <option value="{{$team->category}}">{{$team->category}}</option>
                   <option value="Benjamín">Benjamín</option>
                   <option value="Alevín">Alevín</option>
@@ -32,6 +33,7 @@
                   <option value="Cadete">Cadete</option>
                   <option value="Juvenil">Juvenil</option>
                 </select>
+                @error('category')<br><small>*{{$message}}</small><br>@enderror
                 <input type="hidden" name="club_id" value="{{$team->club_id}}">
               </div>
               <div class="flex items-center justify-start mt-4 gap-x-2">
