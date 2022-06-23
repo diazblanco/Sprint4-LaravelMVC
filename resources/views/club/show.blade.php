@@ -2,7 +2,7 @@
 @section('title', 'Club ' . $club->name)
 
 @section('content')
-    <div class="container xl:max-w-5xl mx-auto my-0 px-4 pb-10 bg-white/95 shadow shadow-md shadow-red-400/50 drop-shadow">
+    <div class="container xl:max-w-5xl mx-auto my-0 px-4 pb-10 bg-gradient-to-r from-red-50/50 to-red-300/50 shadow shadow-md shadow-red-400/50 drop-shadow">
         <div class="flex flex-row justify-between justify-end mx-4">
             <div class="type text-red-600 self-end pt-10 text-3xl font-thin">els equips de <span class="font-black">{{$club->name}}</span></div>
             <a href="{{route('equips.create', $club->id)}}" class="self-end px-4 py-2 rounded-md bg-rose-50 text-rose-600 border border-rose-600/10 hover:bg-gradient-to-r from-red-700 to-red-400 hover:text-white mb-12 shadow-md shadow-red-400/50 drop-shadow type appearance-none mb-0">
@@ -13,7 +13,7 @@
         <!-- Cada equipo -->
         @foreach ($teams as $team)
         <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/4 lg:px-6 wow fadeInUp pt-5" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
-            <div class="bg-white py-8 px-12 mb-12 border border-rose-600/10 rounded-lg shadow-md shadow-red-400/50 drop-shadow transform transition duration-300 ease-in-out hover:-translate-y-2 h-max flex flex-col justify-between">
+            <div class="bg-white/90 py-8 px-12 mb-12 border border-rose-600/10 rounded-lg shadow-md shadow-red-400/50 drop-shadow transform transition duration-300 ease-in-out hover:-translate-y-2 h-max flex flex-col justify-between">
                 <h3 class="text-lg leading-normal mb-2 font-semibold text-black h-16">{{$team->name}}</h3></a>
                 <div class="display-flex flex-row justify-around mb-4">
                     <!-- botón actualizar -->

@@ -14,7 +14,7 @@
 
 <body class="bg-repeat" style="background-image: url({{asset('img/goal-net.png')}});">
     <!-- cabecera-->
-    <header class="shadow-md">
+    <header class="drop-shadow-2xl">
         <div class="top-0 w-full h-full bg-center bg-cover object-cover" style="background-image: url({{asset('img/header-img.jpeg')}});">
             <div class="flex-col items-center justify-center w-full h-full">
                 <a href="{{route('home')}}" class="text-left type ml-5 mt-1 text-xl text-red-700/75">#home</a>
