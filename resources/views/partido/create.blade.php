@@ -15,14 +15,14 @@
                     <div class="w-1/2 pr-2">
                         <label class="block text-sm font-bold text-rose-800" for="title">Data del parti</label>
                         <input type="date" name="match_date" class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-red-400" placeholder="Indica el dia i hora que tindrà lloc el partit" value="{{old('date')}}"/>
-                        @error('date')<br><small>*{{$message}}</small><br>@enderror
+                        {{-- @error('date')<br><small>*{{$message}}</small><br>@enderror --}}
                     </div>
                     <div class="w-1/2 pl-2">
                         <label class="block text-sm font-bold text-rose-800" for="title">Hora del parti</label>
                         <input type="time" name="match_time" class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-red-400" placeholder="Indica el dia i hora que tindrà lloc el partit" value="{{old('time')}}"/>
                     </div>
                 </div>
-                @error('time')<br><small>*{{$message}}</small><br>@enderror
+                {{-- @error('time')<br><small>*{{$message}}</small><br>@enderror --}}
             {{-- categoría --}}
                 <div>
                     <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Categoria</label>
@@ -35,7 +35,7 @@
                         <option value="Juvenil">Juvenil</option>
                     </select>
                 </div>
-                @error('category')<br><small>*{{$message}}</small><br>@enderror
+                {{-- @error('category')<br><small>*{{$message}}</small><br>@enderror --}}
                 <div class="flex justify-between">
                 {{-- Equipo local --}}
                     <div class="w-1/2 pr-2">
@@ -45,7 +45,7 @@
                             <option value="{{$team->id}}">{{$team->name}}</option>
                             @endforeach
                         </select>
-                        @error('team_id_local')<br><small>*{{$message}}</small><br>@enderror
+                        {{-- @error('team_id_local')<br><small>*{{$message}}</small><br>@enderror --}}
                     </div>
                 {{-- Equipo visitante --}}
                     <div class="w-1/2 pl-2">
@@ -55,7 +55,7 @@
                             <option value="{{$team->id}}">{{$team->name}}</option>
                             @endforeach
                         </select>
-                        @error('team_id_visiting')<br><small>*{{$message}}</small><br>@enderror
+                        {{-- @error('team_id_visiting')<br><small>*{{$message}}</small><br>@enderror --}}
                     </div>
                 </div>
                 <div class="flex justify-between">
@@ -80,19 +80,14 @@
                 </div>
             </form>
             {{-- Errors --}}
-            <div class="bg-rose-400 text-white">
-                @if (count($errors) > 0)
-                <div class="r">
-                    <div class="">
-                        <div class="">
-                            @foreach($errors->all() as $error)
-                            {{ $error }} <br>
-                            @endforeach      
-                        </div>
-                    </div>
+            @if (count($errors) > 0)
+                <div class="mt-5 bg-rose-100 border border-red-400 text-rose-800 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">oh, noo!</strong><br>
+                    @foreach($errors->all() as $error)
+                    <span class="block sm:inline">{{ $error }} </span><br>
+                    @endforeach
                 </div>
-                @endif
-            </div>
+            @endif
             {{-- END Errors --}}
           </div>
         </div>      

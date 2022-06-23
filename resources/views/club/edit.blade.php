@@ -18,7 +18,7 @@
                 <input
                   class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   type="text" name="name" value="{{old('name', $club->name)}}" placeholder="Indica el nom del club"/>
-                  @error('name')<br><small>*{{$message}}</small><br>@enderror
+                  {{-- @error('name')<br><small>*{{$message}}</small><br>@enderror --}}
               </div>
               <div>
                 <label class="block text-sm pt-5 font-bold text-rose-800" for="title">
@@ -27,7 +27,7 @@
                 <input
                   class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-grey-100 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   type="text" name="location" value="{{old('location', $club->location)}}" placeholder="A quina localitat pertany"/>
-                  @error('location')<br><small>*{{$message}}</small><br>@enderror
+                  {{-- @error('location')<br><small>*{{$message}}</small><br>@enderror --}}
               </div>
               <div>
                 <label class="block text-sm pt-5 font-bold text-rose-800" for="title">
@@ -43,7 +43,7 @@
                   <option value="Taronja">Taronja</option>
                   <option value="Vermell">Vermell</option>
                 </select>
-                @error('color')<br><small>*{{$message}}</small><br>@enderror
+                {{-- @error('color')<br><small>*{{$message}}</small><br>@enderror --}}
               </div>
               <div class="flex items-center justify-start mt-4 gap-x-2">
                 <button type="submit"
@@ -52,6 +52,16 @@
                 </button>
               </div>
             </form>
+            {{-- Errors --}}
+            @if (count($errors) > 0)
+                <div class="mt-5 bg-rose-100 border border-red-400 text-rose-800 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">oh, noo!</strong><br>
+                    @foreach($errors->all() as $error)
+                    <span class="block sm:inline">{{ $error }} </span><br>
+                    @endforeach
+                </div>
+            @endif
+            {{-- END Errors --}}
           </div>
         </div>      
         <div class="flex flex-wrap flex-row -mx-4 text-center">
