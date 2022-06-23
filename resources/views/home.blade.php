@@ -61,8 +61,6 @@
             <div class="flex flex-col items-center justify-center w-screen py-1">  
                 {{--Tabla--}}
                 <div class="flex flex-col mt-6">
-                {{-- Benjamín --}}    
-                    <div class="type text-red-600 self-start pb-2 text-2xl font-thin">categoria <span class="font-black">Benjamí</span></div>
                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                             <div class="shadow overflow-hidden sm:rounded-lg">
@@ -82,19 +80,19 @@
                                     @foreach ($matches as $match)
                                     <tbody class="bg-white py-8 px-12 mb-12 border border-rose-600/10 rounded-lg shadow-md shadow-red-400/50 drop-shadow">
                                         <tr>
-                                            <td class="pl-6 pr-0 py-4">{{$match->category}}</td>
-                                            <td class="pl-6 pr-0 py-4">{{$match->match_date}}</td>
+                                            <td class="pl-6 pr-0 py-4">{{$match->match_category}}</td>
+                                            <td class="pl-6 pr-0 py-4">{{$match->date_match}}</td>
                                             <td class="px-0 py-4 text-center">|</td>
-                                            <td class="pl-0 pr-6 py-4">{{$match->match_time}}</td>
-                                            <td class="px-6 py-4"><?php if ($match->local_goals == null){echo "Pendent";} else {echo "Jugat";}?></td>
-                                            <td class="px-6 py-4">{{$match->team_id_local}}</td>
-                                            <td class="px-6 py-4">{{$match->team_id_visiting}}</td>
-                                            <td class="pl-9 pr-0 py-4 text-right ">{{$match->local_goals}}</td>
+                                            <td class="pl-0 pr-6 py-4">{{$match->time_match}}</td>
+                                            <td class="px-6 py-4"><?php if ($match->goals_local == null){echo "Pendent";} else {echo "Jugat";}?></td>
+                                            <td class="px-6 py-4">{{$match->name_local}}</td>
+                                            <td class="px-6 py-4">{{$match->name_visiting}}</td>
+                                            <td class="pl-9 pr-0 py-4 text-right ">{{$match->goals_local}}</td>
                                             <td class="px-0 py-4 text-center">-</td>
-                                            <td class="pr-9 pl-0 py-4 text-left">{{$match->visiting_goals}}</td>
+                                            <td class="pr-9 pl-0 py-4 text-left">{{$match->goals_visiting}}</td>
                                             <td class="px-0 pl-0 py-4 mr-0 text-left">
                                                 {{--botón editar--}}
-                                                <a href="{{route('partits.edit', $match)}}" class="text-red-400 hover:text-rose-600 mr-0">
+                                                <a href="{{route('partits.edit', $match->id_matches)}}" class="text-red-400 hover:text-rose-600 mr-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                                     </svg>
@@ -102,7 +100,7 @@
                                             </td>
                                             <td class="pr-4 pl-0 py-4 text-left">
                                                 {{--botón borrar--}}
-                                                <form action="{{route('partits.destroy', $match)}}" method="POST" class="text-rose-700 hover:text-rose-800">
+                                                <form action="{{route('partits.destroy', $match->id_matches)}}" method="POST" class="text-rose-700 hover:text-rose-800">
                                                     @csrf
                                                     @method('delete')
                                                     <button class="m-0 py-2 px-3">
@@ -120,7 +118,7 @@
                         </div>
                     </div>                
                 </div>
-                {{-- END Benjamín --}}
+                <!--///////////////////////////////-->
                 
                                 </table>
                             </div>

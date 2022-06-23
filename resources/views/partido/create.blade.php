@@ -26,7 +26,8 @@
             {{-- categoría --}}
                 <div>
                     <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Categoria</label>
-                    <select name="category" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-red-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" value="{{old('category')}}">
+                    <select name="category" class=" block w-full mt-1 border-gray-300 rounded-md shadow-sm text-red-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" value="{{old('category')}}">
+                        <option value="">Categoria</option>
                         <option value="Benjamín">Benjamín</option>
                         <option value="Alevín">Alevín</option>
                         <option value="Infantil">Infantil</option>
@@ -62,13 +63,13 @@
                     <div class="w-1/2 pr-2">
                         <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Gols equip local</label>
                         <input name="local_goals" type="number" min="0"
-                        class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Gols marcats per l'equip local" value="{{old('visiting_local')}}"/>
+                        class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-red-400" placeholder="Gols marcats per l'equip local" value="{{old('visiting_local')}}"/>
                     </div>
                 {{-- Goles visitante --}}
                     <div class="w-1/2 pl-2">
                         <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Gols equip visitant</label>
                         <input name="visiting_goals" type="number" min="0"
-                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Gols marcats per l'equip visitant" value="{{old('visiting_goals')}}"/>   
+                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-red-400" placeholder="Gols marcats per l'equip visitant" value="{{old('visiting_goals')}}"/>   
                     </div>
                 </div>
             {{-- Enviar --}}

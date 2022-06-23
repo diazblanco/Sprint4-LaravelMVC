@@ -53,7 +53,7 @@
                     <div class="w-1/2 pl-2">
                         <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Equip visitant</label>
                         <select name="team_id_visiting" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm text-red-400 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                            <option value="{{old('team_id_visiting', $match->team_id_visiting)}}">{{$match->team_id_visiting}}</option>{{--where equip name :--}}
+                            <option value="{{old('team_id_visiting', $match->team_id_visiting)}}">{{$match->team_id_visiting}}</option>
                             @foreach ($teams as $team)
                             <option value="{{$team->id}}">{{$team->name}}</option>
                             @endforeach
@@ -66,13 +66,13 @@
                     <div class="w-1/2 pr-2">
                         <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Gols equip local</label>
                         <input name="local_goals" value="{{old('local_goals', $match->local_goals)}}" type="number" min="0"
-                        class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Gols marcats per l'equip local"/>
+                        class="block w-full mt-1 border-rose-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-red-400" placeholder="Gols marcats per l'equip local"/>
                     </div>
                 {{-- Goles visitante --}}
                     <div class="w-1/2 pl-2">
                         <label class="block text-sm pt-5 font-bold text-rose-800" for="title">Gols equip visitant</label>
                         <input name="visiting_goals" value="{{old('visiting_goals', $match->visiting_goals)}}" type="number" min="0"
-                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Gols marcats per l'equip visitant"/>   
+                        class="block w-full mt-1 border-gray-300 rounded-md shadow-sm placeholder:text-red-200 placeholder:text-left focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-red-400" placeholder="Gols marcats per l'equip visitant"/>   
                     </div>
                 </div>
 
