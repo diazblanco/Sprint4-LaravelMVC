@@ -1,7 +1,7 @@
 @extends('layouts.template')
 @section('title', 'SoccerLeague')
 @section('content')
-    <div class="container xl:max-w-5xl mx-auto my-0 px-4 pb-2 bg-white/95 shadow shadow-md shadow-red-400/50 drop-shadow">
+    <div class="container xl:max-w-5xl mx-auto my-0 px-4 pb-2 bg-gradient-to-r from-red-50/50 to-red-300/50 shadow shadow-md shadow-red-400/50 drop-shadow">
         <div class="flex flex-row justify-between justify-end mx-4">
             <div class="type text-red-600 self-end pt-10 text-3xl font-thin">els <span class="font-black">clubs de la lliga</span></div>
             <a href="{{route('clubs.create')}}" class="self-end px-4 py-2 rounded-md bg-rose-50 text-rose-600 border border-rose-600/10 hover:bg-gradient-to-r from-red-700 to-red-400 hover:text-white mb-12 shadow-md shadow-red-400/50 drop-shadow type appearance-none mb-0">
@@ -12,12 +12,12 @@
     <!-- Cada club -->
         @foreach ($clubs as $club)
             <div class="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/4 lg:px-6 wow fadeInUp pt-5" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
-                <div class="bg-white py-8 px-12 mb-12 border border-rose-600/10 rounded-lg shadow-md shadow-red-400/50 drop-shadow transform transition duration-300 ease-in-out hover:-translate-y-2 h-max flex flex-col justify-between">
+                <div class="bg-gradient-to-r from-white/75 to-rose-50/75 py-8 px-12 mb-12 border border-rose-600/10 rounded-lg shadow-md shadow-red-400/50 drop-shadow transform transition duration-300 ease-in-out hover:-translate-y-2 h-max flex flex-col justify-between">
                     <div class="inline-block mb-4">
                         <img src="{{asset('img/soccer.png')}}" class="w-2/4 mx-auto h-auto">
                     </div>
-                    <a href="{{route('clubs.show', $club->id)}}"><h3 class="text-lg leading-normal mb-2 font-semibold text-black h-16">{{$club->name}}</h3></a>
-                    <div class="display-flex flex-row justify-around mb-4">
+                    <a href="{{route('clubs.show', $club->id)}}"><h3 class="text-lg leading-normal mb-2 font-semibold text-rose-800 h-16">{{$club->name}}</h3></a>
+                    <div class="display-flex flex-row justify-around mt-10">
                         <!-- botón actualizar -->
                         <div>
                             <a href="{{route('clubs.edit', $club)}}">
@@ -46,7 +46,7 @@
     </div>
 
 {{--Partidos--}}  
-    <div class="container xl:max-w-5xl mx-auto my-12 px-4 pb-10 bg-white/95 shadow shadow-md shadow-red-400/50 drop-shadow">
+    <div class="container xl:max-w-5xl mx-auto my-12 px-4 pb-10 bg-gradient-to-r from-red-300/50 to-red-50/50 shadow shadow-md shadow-red-400/50 drop-shadow">
         <div class="flex flex-row justify-between justify-end mx-4">
             <div class="type text-red-600 self-end pt-10 text-3xl font-thin">tots els <span class="font-black">partits de la lliga</span></div>
             <div class="self-end pt-10 flex flex-row">
@@ -78,18 +78,18 @@
                                         </tr>
                                     </thead>
                                     @foreach ($matches as $match)
-                                    <tbody class="bg-white py-8 px-12 mb-12 border border-rose-600/10 rounded-lg shadow-md shadow-red-400/50 drop-shadow">
+                                    <tbody class="bg-gradient-to-r from-rose-50/75 to-white/75 py-8 px-12 mb-12 border border-rose-600/10 rounded-lg shadow-md shadow-red-400/50 drop-shadow">
                                         <tr>
-                                            <td class="pl-6 pr-0 py-4">{{$match->match_category}}</td>
-                                            <td class="pl-6 pr-0 py-4">{{$match->date_match}}</td>
-                                            <td class="px-0 py-4 text-center">|</td>
-                                            <td class="pl-0 pr-6 py-4">{{$match->time_match}}</td>
-                                            <td class="px-6 py-4"><?php if ($match->goals_local == null){echo "Pendent";} else {echo "Jugat";}?></td>
-                                            <td class="px-6 py-4">{{$match->name_local}}</td>
-                                            <td class="px-6 py-4">{{$match->name_visiting}}</td>
-                                            <td class="pl-9 pr-0 py-4 text-right ">{{$match->goals_local}}</td>
-                                            <td class="px-0 py-4 text-center">-</td>
-                                            <td class="pr-9 pl-0 py-4 text-left">{{$match->goals_visiting}}</td>
+                                            <td class="pl-6 pr-0 py-4 text-rose-800">{{$match->match_category}}</td>
+                                            <td class="pl-6 pr-0 py-4 text-rose-800">{{$match->date_match}}</td>
+                                            <td class="px-0 py-4 text-cente text-rose-800r">|</td>
+                                            <td class="pl-0 pr-6 py-4 text-rose-800">{{$match->time_match}}</td>
+                                            <td class="px-6 py-4 text-rose-800"><?php if ($match->goals_local == null){echo "Pendent";} else {echo "Jugat";}?></td>
+                                            <td class="px-6 py-4 text-rose-800">{{$match->name_local}}</td>
+                                            <td class="px-6 py-4 text-rose-800">{{$match->name_visiting}}</td>
+                                            <td class="pl-9 pr-0 py-4 text-right text-rose-800">{{$match->goals_local}}</td>
+                                            <td class="px-0 py-4 text-center text-rose-800">-</td>
+                                            <td class="pr-9 pl-0 py-4 text-left text-rose-800">{{$match->goals_visiting}}</td>
                                             <td class="px-0 pl-0 py-4 mr-0 text-left">
                                                 {{--botón editar--}}
                                                 <a href="{{route('partits.edit', $match->id_matches)}}" class="text-red-400 hover:text-rose-600 mr-0">
@@ -133,5 +133,8 @@
 
 
 {{-- ', 'Alevín', 'Infantil', 'Cadete', 'Juvenil
+
+<div class='light x1'></div><div class='light x2'></div><div class='light x3'></div><div class='light x4'></div><div class='light x5'></div><div class='light x6'></div><div class='light x7'></div><div class='light x8'></div><div class='light x9'></div>
+
  --}}
 {{-- foreach categoria, renderizar la tabla correspondiente con el {{categoria->name}} --}}

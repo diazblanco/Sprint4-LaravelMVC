@@ -39,11 +39,11 @@ class MatchControllers extends Controller
     }
     public function update(Request $request, Matche $match){
         $request->validate([
-            'match_date'=>'required',
+            'match_date'=>'required|date|after:yesterday',
             'match_time'=>'required',
             'category'=>'required',
             'team_id_local'=>'required',
-            'team_id_visiting'=>'required',
+            'team_id_visiting'=>'required|different:team_id_local',
         ]);
         $match->match_date = $request->match_date;
         $match->match_time = $request->match_time;
