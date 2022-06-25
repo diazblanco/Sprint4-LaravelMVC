@@ -2,12 +2,12 @@
 @section('title', 'Actualizar partido')
 
 @section('content')
-    <div class="container xl:max-w-4xl mx-auto my-0 px-4 bg-white/95 shadow">
+    <div class="container xl:max-w-4xl mx-auto my-0 px-4 bg-gradient-to-r from-red-50/50 to-red-300/50 shadow">
         <div class="flex flex-row justify-between justify-end mx-16">
             <div class="type text-red-600 self-end pt-10 text-3xl font-thin">actualitzar <span class="font-black">partit</span></div>
         </div>
-        <div class="w-full px-16 pt-0 pb-10 mt-6 overflow-hidden bg-white rounded-lg lg:max-w-4xl">
-          <div class="w-full px-6 py-4 bg-white rounded shadow-md ring-1 ring-gray-900/10">
+        <div class="w-full px-16 pt-0 pb-10 mt-6 overflow-hidden rounded-lg lg:max-w-4xl">
+          <div class="w-full px-6 py-4 bg-white/90 rounded shadow-md ring-1 ring-gray-900/10">
             <form method="POST" action="{{route('partits.update', $match)}}">
             @csrf
             @method('put')
@@ -96,6 +96,14 @@
         </div>      
         <div class="flex flex-wrap flex-row -mx-4 text-center">
           
+        </div>
+        <div class="flex flex-row-reverse">
+            <a href="{{route('home')}}" class="flex flex-row self-end px-4 py-2 text-rose-800 hover:text-red-400 type appearance-none mb-0">
+                <svg class="mr-2 pb-2" width="24" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.02698 11.9929L5.26242 16.2426L6.67902 14.8308L4.85766 13.0033L22.9731 13.0012L22.9728 11.0012L4.85309 11.0033L6.6886 9.17398L5.27677 7.75739L1.02698 11.9929Z" fill="currentColor" />
+                </svg>
+                Tornar
+            </a>
         </div>
     </div>
 
